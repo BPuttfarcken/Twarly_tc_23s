@@ -1,0 +1,134 @@
+{
+  "project_info": {
+    "project_number": "456394294898",
+    "project_id": "wastelessfest",
+    "storage_bucket": "wastelessfest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456394294898:android:6339db945b2ac49f7f24eb",
+        "android_client_info": {
+          "package_name": "com.bjoernputtfarcken.twarly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456394294898-amkmm10ee6qged88clvcbkai3j3c8nuf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bjoernputtfarcken.twarly",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "456394294898-73lii9v6h1u64qeo0d4stabqfnd1biop.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAe3sVKlZLg3Is_D-oO30tymlDYR78AUZ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456394294898-73lii9v6h1u64qeo0d4stabqfnd1biop.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "456394294898-8r0h7346o3541fo7h77jsc71fk3n86o8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bjoernputtfarcken.twarly"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456394294898:android:165ae3860ca1603f7f24eb",
+        "android_client_info": {
+          "package_name": "com.flutterflow.finwallet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456394294898-73lii9v6h1u64qeo0d4stabqfnd1biop.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAe3sVKlZLg3Is_D-oO30tymlDYR78AUZ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456394294898-73lii9v6h1u64qeo0d4stabqfnd1biop.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "456394294898-8r0h7346o3541fo7h77jsc71fk3n86o8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bjoernputtfarcken.twarly"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456394294898:android:d4dec71c07a3eb7c7f24eb",
+        "android_client_info": {
+          "package_name": "com.mycompany.wastelessfestv2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456394294898-0olll6lbh74hthkk7f98ec5d9ude26tf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.wastelessfestv2",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "456394294898-73lii9v6h1u64qeo0d4stabqfnd1biop.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAe3sVKlZLg3Is_D-oO30tymlDYR78AUZ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456394294898-73lii9v6h1u64qeo0d4stabqfnd1biop.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "456394294898-8r0h7346o3541fo7h77jsc71fk3n86o8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bjoernputtfarcken.twarly"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
