@@ -16,7 +16,7 @@ https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/3bb2c460-4ffe-4f5
   - confirm by pressing "save changes"
   - press the arrows at the top left corner to get back to the homescreen
 
-https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/34b946ca-e215-487d-95aa-3e5c3db0e596
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/bf0b5884-e780-4eb5-b414-5efb290e0f44
 
 3. Homescreen
   - the homescreen displays the total and idividual waste-saving counter for the event
@@ -26,14 +26,14 @@ https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/34b946ca-e215-487
   - the "scan" button opens a QR-code scanner
   - with this scanner flyer, business cards, and account-qr-codes can be scanned
 
-https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/d83dde77-b967-4db0-adf8-73918299043b
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/592c9e2d-27e8-4b7d-9253-63c9d0f51a50
 
 4. Ticket
   - the button on the bottom far left leads to the ticket
   - if the ticket code you entered in the account settings matches a ticket in the ticket database this ticket will be displayed here
   - you can get back to the homescreen by pressing the arrow on the top left corner or swiping right
 
-https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/534b6f12-721b-41c0-b673-6a9c3337e184
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/f5a00b9a-3410-4a0f-b1f5-78b7fa04bc7d
 
 5. Wallet
   - the wallet can be accessed by pressing the button on the bottom mid-left
@@ -43,7 +43,7 @@ https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/534b6f12-721b-41c
   - the plus button on the bottom right corner opens the QR-code scanner again to add items to your wallet
   - you can get back to the homescreen by pressing the arrow on the top left corner or swiping right
 
-https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/918dafdb-1b6c-4747-b72e-9ca4d947f6b8
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/ccadc51f-cea7-43e8-b8a6-526c1bdd5c38
 
 6. Map
    - the map can be accessed by pressing the button on the bottom mid-right
@@ -52,12 +52,12 @@ https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/918dafdb-1b6c-474
    - the button "sow all exhibitors" is currently not enabled but would be connected to a page of all exhibitors in the future
    - you can get back to the homescreen by pressing the arrow on the top left corner or swiping right
 
-https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/bb06884c-5b7d-4467-9f37-25bc0922ca42
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/9d7af79e-522d-446f-946e-5c6daaa175fa
 
 7. Chat
   - a look a like prototype of the chat feature can accessed by the button on the bottom far right
 
-https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/5341bd81-2218-4553-8d12-31fef61be8da
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/c51196f2-9de2-4b87-a7f5-533baccdc05d
 
 8. Scanning
   - if you scan a flyer, business card or account-qr-code successfully a new page will load with the digital version of the scanned item
@@ -65,9 +65,9 @@ https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/5341bd81-2218-455
   - in case you pick up the item you will be redirected to the wallet
   - in case you cancel you will be redirected to the homescreen
 
-https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/a7349b99-7193-451b-a2de-4047cc374c75
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/7b39dacf-5717-4e5e-9cce-9decdcdf352f
 
-https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/db3a634d-2060-41e9-9208-8aecb9fd4929
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/31d9dd3f-0bed-4230-97eb-0696b824a6f0
 
 9. Achievements
   - you can access the achievement page by pressing the icon on the top left corner of the homescreen
@@ -76,7 +76,7 @@ https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/db3a634d-2060-41e
   - by swiping right or tapping on "leaderboard" you can see the leaderboard of individual waste savers
   - the achievement page is currently not functional programmed and shows how it could be realized in the future
 
-https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/c4ee5557-edcd-493c-8f32-fabbc647cb56
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/5581a5d7-4752-4f61-a2a7-d5ac24c437de
 
 ## Databases
 
