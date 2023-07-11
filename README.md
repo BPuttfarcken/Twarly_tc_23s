@@ -87,26 +87,26 @@ Currently the app takes information primarly from three different databases
 ### User information
 
 The database "TicketListe" contains all the account specifc data as pictured below.
-![TicketListe](https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/fbca5f04-99b9-45ab-8344-8d4a77bf84e5)
+![UserDatenbank](https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/e5531348-8cbb-4a1b-b624-2ef4559b611c)
 
 The user ID (uid) is generated during the account set up and can not be changed and is therefore an unique identifier for the specific account. Most of the other entrys can be changed by the user in the settings of the app.
 
 ### Tickets
 
 The database "TicketDatenbank" contains the information of the sold event tickets. This database has to be set up by the organizer of the event or fair.
-![TicketDatenbank](https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/3d8dbf99-4c6f-4f87-9cab-61797c276dd4)
+![TicketDatenbank](https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/511436e9-ac03-4cd4-a01d-a045d29d18d5)
 
 The event organizer can sell the tickets online and send the "TicketNO" to the customer. The customer can enter the "TicketNO" in the account settings of the app. If the "TicketNO" matches the "TicketCode" of one entry in the "TicketDatenbank" the ticket and all of the other ticket information will be displayed in the app.
 
 ### Waste counter
 
 The database "WasteCounter" contains information of scanning events.
-![WasteCounter](https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/dbf26353-ac46-46cf-8f1f-09b99b08084f)
+![WasteCounterDatenbank](https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/2eb989a8-fa41-4f33-a847-0578b748005f)
 
 When a user picks up a digital flyer or business card, the database receives an entry containing all information shown in the picture above. The sum of all entries results in the total waste saved counter displayed at the homescreen of the app. The indiviual waste saved can be calculated by the sum of all entries with the account specific "userID". Custom functions were used to calculate the sums of the entries.
 
 Example of custom function code for summing up the individual waste weight saved:
-![image](https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/70b77460-ec6a-4551-ab7b-6e14fc6e40fd)
+![sumUserwasteweight](https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/98162f12-aba1-40c2-8ca1-32f081624a9c)
 
 ## Scanning
 
