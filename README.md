@@ -7,13 +7,17 @@ Presenting Twarly: This App helps to reduce waste at events and fairs by providi
 1. Create a log-in account
   - you will be directed to the homescreen
 
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/85cc4aa1-70d9-49be-a74a-8aa420115a93
+
 2. Set up your account
   - press the default profile picture at the top right corner
   - press "edit profile"
   - here you can edit your profile picture, display name, city, job, add a bio and enter your ticket code for the entry ticket
   - confirm by pressing "save changes"
   - press the arrows at the top left corner to get back to the homescreen
-    
+
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/34b946ca-e215-487d-95aa-3e5c3db0e596
+
 3. Homescreen
   - the homescreen displays the total and idividual waste-saving counter for the event
   - you can also switch to the CO2-saving counter by pressing "Display Co2" or swiping to the left
@@ -22,10 +26,14 @@ Presenting Twarly: This App helps to reduce waste at events and fairs by providi
   - the "scan" button opens a QR-code scanner
   - with this scanner flyer, business cards, and account-qr-codes can be scanned
 
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/d83dde77-b967-4db0-adf8-73918299043b
+
 4. Ticket
   - the button on the bottom far left leads to the ticket
   - if the ticket code you entered in the account settings matches a ticket in the ticket database this ticket will be displayed here
   - you can get back to the homescreen by pressing the arrow on the top left corner or swiping right
+
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/534b6f12-721b-41c0-b673-6a9c3337e184
 
 5. Wallet
   - the wallet can be accessed by pressing the button on the bottom mid-left
@@ -35,15 +43,21 @@ Presenting Twarly: This App helps to reduce waste at events and fairs by providi
   - the plus button on the bottom right corner opens the QR-code scanner again to add items to your wallet
   - you can get back to the homescreen by pressing the arrow on the top left corner or swiping right
 
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/918dafdb-1b6c-4747-b72e-9ca4d947f6b8
+
 6. Map
    - the map can be accessed by pressing the button on the bottom mid-right
    - you can tap on the map to zoom in and out
    - you exit the inspect mode by pressing the "x" in the top left corner
    - the button "sow all exhibitors" is currently not enabled but would be connected to a page of all exhibitors in the future
    - you can get back to the homescreen by pressing the arrow on the top left corner or swiping right
-  
+
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/bb06884c-5b7d-4467-9f37-25bc0922ca42
+
 7. Chat
-  - the chat feature, accessed by the button on the bottom far right, is currently not available
+  - a look a like prototype of the chat feature can accessed by the button on the bottom far right
+
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/5341bd81-2218-4553-8d12-31fef61be8da
 
 8. Scanning
   - if you scan a flyer, business card or account-qr-code successfully a new page will load with the digital version of the scanned item
@@ -51,7 +65,20 @@ Presenting Twarly: This App helps to reduce waste at events and fairs by providi
   - in case you pick up the item you will be redirected to the wallet
   - in case you cancel you will be redirected to the homescreen
 
-## Database
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/a7349b99-7193-451b-a2de-4047cc374c75
+
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/db3a634d-2060-41e9-9208-8aecb9fd4929
+
+9. Achievements
+  - you can access the achievement page by pressing the icon on the top left corner of the homescreen
+  - the collectible achivements are diplayed by default
+  - you can get further information on how to collect the achievement by tapping onto the achivement
+  - by swiping right or tapping on "leaderboard" you can see the leaderboard of individual waste savers
+  - the achievement page is currently not functional programmed and shows how it could be realized in the future
+
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/c4ee5557-edcd-493c-8f32-fabbc647cb56
+
+## Databases
 
 The database was set up using Firebase. Cloud Firestore is a flexible, scalable database for mobile, web, and server development from Firebase and Google Cloud.
 
@@ -83,7 +110,7 @@ Example of custom function code for summing up the individual waste weight saved
 
 ## Scanning
 
-You can scan QR-Codes with Twarly to pick up flyers and business cards. For demo purposes this function is currently set up with a simple if-then logic. A connection with a flyer and business card database would be suggested for the development in the future. You can also connect with people throug scanning their personal QR-code on the homescreen. The homescreen QR-code contains information about the unique user ID. The QR-code scanner queries the user database. The app generates a business card with some of the account information (for example name, e-mail adress, job, ...) if a user ID is scanned.
+You can scan QR-Codes with Twarly to pick up flyers and business cards. For demo purposes this function is currently set up with a simple if-then logic. A connection with a flyer and business card database would be suggested for the development in the future. You can also connect with people through scanning their personal QR-code on the homescreen. The homescreen QR-code contains information about the unique user ID. The QR-code scanner queries the user database. The app generates a business card with some of the account information (for example name, e-mail adress, job, ...) if a user ID is scanned.
 
 
     
