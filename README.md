@@ -7,7 +7,7 @@ Presenting Twarly: This App helps to reduce waste at events and fairs by providi
 1. Create a log-in account
   - you will be directed to the homescreen
 
-https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/85cc4aa1-70d9-49be-a74a-8aa420115a93
+https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/3bb2c460-4ffe-4f55-87fa-3d93276a8b92
 
 2. Set up your account
   - press the default profile picture at the top right corner
