@@ -19,17 +19,17 @@ https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/3bb2c460-4ffe-4f5
 https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/bf0b5884-e780-4eb5-b414-5efb290e0f44
 
 3. Homescreen
-  - the homescreen displays the total and idividual waste-saving counter for the event
+  - the homescreen displays the total and individual waste-saving counter for the event
   - you can also switch to the CO2-saving counter by pressing "Display Co2" or swiping to the left
   - the QR-code on the homescreen contains the individual user ID of your account
-  - others can scan this code to connect with you some of the account information (name, city, job, bio) will be displayed
+  - others can scan this code to connect with you, some of the account information (name, city, job, bio) will be displayed
   - the "scan" button opens a QR-code scanner
-  - with this scanner flyer, business cards, and account-qr-codes can be scanned
+  - with this scanner flyer, business cards, and account-qr-codes can be scanned (described in detail later)
 
 https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/592c9e2d-27e8-4b7d-9253-63c9d0f51a50
 
 4. Ticket
-  - the button on the bottom far left leads to the ticket
+  - the button on the bottom far left leads to the entry ticket
   - if the ticket code you entered in the account settings matches a ticket in the ticket database this ticket will be displayed here
   - you can get back to the homescreen by pressing the arrow on the top left corner or swiping right
 
@@ -55,7 +55,7 @@ https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/ccadc51f-cea7-43e
 https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/9d7af79e-522d-446f-946e-5c6daaa175fa
 
 7. Chat
-  - a look a like prototype of the chat feature can accessed by the button on the bottom far right
+  - a look alike prototype of the chat feature can accessed by the button on the bottom far right
 
 https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/c51196f2-9de2-4b87-a7f5-533baccdc05d
 
@@ -71,7 +71,7 @@ https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/31d9dd3f-0bed-423
 
 9. Achievements
   - you can access the achievement page by pressing the icon on the top left corner of the homescreen
-  - the collectible achivements are diplayed by default
+  - the collectible achievements are displayed by default
   - you can get further information on how to collect the achievement by tapping onto the achivement
   - by swiping right or tapping on "leaderboard" you can see the leaderboard of individual waste savers
   - the achievement page is currently not functional programmed and shows how it could be realized in the future
@@ -82,22 +82,22 @@ https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/5581a5d7-4752-4f6
 
 The database was set up using Firebase. Cloud Firestore is a flexible, scalable database for mobile, web, and server development from Firebase and Google Cloud.
 
-Currently the app takes information primarly from three different databases
+Currently the app takes information primarily from three different databases
 
 ### User information
 
-The database "TicketListe" contains all the account specifc data as pictured below.
+The database "TicketListe" contains all the account specific data as pictured below.
 ![TicketListe](https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/8db5ef6a-df6c-4e93-bb54-46a687043e45)
 
 Example of an entry in the firebase database
 ![UserDatenbank](https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/944eea08-ae80-487a-9475-ff70fb9c3fdd)
 
 
-The user ID (uid) is generated during the account set up and can not be changed and is therefore an unique identifier for the specific account. Most of the other entrys can be changed by the user in the settings of the app.
+The user ID (uid) is generated during the account set up and cannot be changed and is therefore a unique identifier for the specific account. Most of the other entries can be changed by the user in the settings of the app.
 
 ### Tickets
 
-The database "TicketDatenbank" contains the information of the sold event tickets. This database has to be set up by the organizer of the event or fair.
+The database "TicketDatenbank" contains the information of the sold event tickets. This database must be set up by the organizer of the event or fair.
 ![TicketDatenbank](https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/aa0b0b92-13cd-4f2e-a4a2-fc87e129b26c)
 
 The event organizer can sell the tickets online and send the "TicketNO" to the customer. The customer can enter the "TicketNO" in the account settings of the app. If the "TicketNO" matches the "TicketCode" of one entry in the "TicketDatenbank" the ticket and all of the other ticket information will be displayed in the app.
@@ -107,14 +107,14 @@ The event organizer can sell the tickets online and send the "TicketNO" to the c
 The database "WasteCounter" contains information of scanning events.
 ![WasteCounter](https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/42410d3d-be64-456b-946d-32f2f9e1d9e9)
 
-When a user picks up a digital flyer or business card, the database receives an entry containing all information shown in the picture above. The sum of all entries results in the total waste saved counter displayed at the homescreen of the app. The indiviual waste saved can be calculated by the sum of all entries with the account specific "userID". Custom functions were used to calculate the sums of the entries.
+When a user picks up a digital flyer or business card, the database receives an entry containing all information shown in the picture above. The sum of all entries results in the total waste saved counter displayed at the homescreen of the app. The individual waste saved can be calculated by the sum of all entries with the account specific "userID". Custom functions were used to calculate the sums of the entries.
 
 Example of custom function code for summing up the individual waste weight saved:
 ![sumUserwasteweight](https://github.com/BPuttfarcken/Twarly_tc_23s/assets/138579475/98162f12-aba1-40c2-8ca1-32f081624a9c)
 
 ## Scanning
 
-You can scan QR-Codes with Twarly to pick up flyers and business cards. For demo purposes this function is currently set up with a simple if-then logic. A connection with a flyer and business card database would be suggested for the development in the future. You can also connect with people through scanning their personal QR-code on the homescreen. The homescreen QR-code contains information about the unique user ID. The QR-code scanner queries the user database. The app generates a business card with some of the account information (for example name, e-mail adress, job, ...) if a user ID is scanned.
+You can scan QR-Codes with Twarly to pick up flyers and business cards. For demo purposes this function is currently set up with a simple if-then logic. A connection with a flyer and business card database would be suggested for the development in the future. You can also connect with people through scanning their personal QR-code on the homescreen. The homescreen QR-code contains information about the unique user ID. The QR-code scanner queries the user database. The app generates a business card with some of the account information (for example name, e-mail address, job, ...) if a user ID is scanned.
 
 # Application framework
 
