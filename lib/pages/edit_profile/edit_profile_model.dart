@@ -32,6 +32,9 @@ class EditProfileModel extends FlutterFlowModel {
   // State field(s) for myBio widget.
   TextEditingController? myBioController;
   String? Function(BuildContext, String?)? myBioControllerValidator;
+  // State field(s) for TicketNO widget.
+  TextEditingController? ticketNOController;
+  String? Function(BuildContext, String?)? ticketNOControllerValidator;
 
   /// Initialization and disposal methods.
 
@@ -42,6 +45,7 @@ class EditProfileModel extends FlutterFlowModel {
     cityController?.dispose();
     jobController?.dispose();
     myBioController?.dispose();
+    ticketNOController?.dispose();
   }
 
   /// Action blocks are added here.

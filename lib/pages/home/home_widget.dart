@@ -7,6 +7,7 @@ import '/widgets/header_v2/header_v2_widget.dart';
 import '/widgets/personal_q_r_code/personal_q_r_code_widget.dart';
 import '/widgets/task_bar/task_bar_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -87,17 +88,6 @@ class _HomeWidgetState extends State<HomeWidget> {
                       },
                     );
 
-                    await WasteCounterRecord.collection
-                        .doc()
-                        .set(createWasteCounterRecordData(
-                          wasteWeight: 0.3,
-                          wasteSaver:
-                              valueOrDefault(currentUserDocument?.userName, ''),
-                          userID: currentUserUid,
-                          dateTime: getCurrentTimestamp,
-                          savedCO2: 1.3,
-                          savedItem: _model.wasteScan,
-                        ));
                     if (_shouldSetState) setState(() {});
                     return;
                   } else {
@@ -115,6 +105,24 @@ class _HomeWidgetState extends State<HomeWidget> {
                           ));
                       if (_shouldSetState) setState(() {});
                       return;
+                    } else {
+                      _model.scannedUID = await queryTicketListeRecordOnce(
+                        queryBuilder: (ticketListeRecord) => ticketListeRecord
+                            .where('uid', isEqualTo: _model.wasteScan),
+                        singleRecord: true,
+                      ).then((s) => s.firstOrNull);
+                      _shouldSetState = true;
+                      if (_model.wasteScan == _model.scannedUID?.uid) {
+                        context.pushNamed(
+                          'ADDBC',
+                          queryParameters: {
+                            'scanneduid': serializeParam(
+                              _model.wasteScan,
+                              ParamType.String,
+                            ),
+                          }.withoutNulls,
+                        );
+                      }
                     }
                   }
 

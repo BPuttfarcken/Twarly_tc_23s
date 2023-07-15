@@ -1,6 +1,9 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/wallet_entrys/flyer_twarly/flyer_twarly_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -88,6 +91,18 @@ class _AddFlyerTwarlyWidgetState extends State<AddFlyerTwarlyWidget> {
                       highlightColor: Colors.transparent,
                       onTap: () async {
                         context.goNamed('Wallet');
+
+                        await WasteCounterRecord.collection
+                            .doc()
+                            .set(createWasteCounterRecordData(
+                              wasteWeight: 0.013,
+                              wasteSaver: valueOrDefault(
+                                  currentUserDocument?.userName, ''),
+                              userID: currentUserUid,
+                              dateTime: getCurrentTimestamp,
+                              savedCO2: 0.012,
+                              savedItem: 'Flyer Twarly',
+                            ));
                       },
                       child: Text(
                         'Pick up',

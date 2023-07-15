@@ -60,21 +60,32 @@ class _QrcodetestWidgetState extends State<QrcodetestWidget> {
           top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 200.0, 0.0, 0.0),
                 child: BarcodeWidget(
                   data: 'flyer_twarly',
                   barcode: Barcode.qrCode(),
-                  width: 300.0,
+                  width: 390.0,
                   height: 200.0,
                   color: FlutterFlowTheme.of(context).primaryText,
                   backgroundColor: Colors.transparent,
                   errorBuilder: (_context, _error) => SizedBox(
-                    width: 300.0,
+                    width: 390.0,
                     height: 200.0,
                   ),
                   drawText: false,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                child: Text(
+                  'Fyler Twarly',
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Readex Pro',
+                        fontSize: 24.0,
+                      ),
                 ),
               ),
             ],

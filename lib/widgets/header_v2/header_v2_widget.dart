@@ -68,17 +68,17 @@ class _HeaderV2WidgetState extends State<HeaderV2Widget> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 FlutterFlowIconButton(
-                  borderColor: Colors.transparent,
-                  borderRadius: 30.0,
-                  borderWidth: 1.0,
-                  buttonSize: 44.0,
+                  borderColor: Colors.black,
+                  borderRadius: 10.0,
+                  borderWidth: 2.0,
+                  buttonSize: 40.0,
                   icon: Icon(
-                    Icons.menu_rounded,
+                    Icons.celebration_rounded,
                     color: Color(0xFF14181B),
-                    size: 24.0,
+                    size: 25.0,
                   ),
-                  onPressed: () {
-                    print('IconButton pressed ...');
+                  onPressed: () async {
+                    context.pushNamed('AchievementPage');
                   },
                 ),
                 ClipRRect(
@@ -107,10 +107,7 @@ class _HeaderV2WidgetState extends State<HeaderV2Widget> {
                         shape: BoxShape.circle,
                       ),
                       child: Image.network(
-                        valueOrDefault<String>(
-                          currentUserPhoto,
-                          'https://images.unsplash.com/photo-1611590027211-b954fd027b51?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1338&q=80',
-                        ),
+                        currentUserPhoto,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -206,7 +203,7 @@ class _HeaderV2WidgetState extends State<HeaderV2Widget> {
                                       width: double.infinity,
                                       height: 189.0,
                                       decoration: BoxDecoration(
-                                        color: Color(0xFFF2F2F2),
+                                        color: Colors.white,
                                         boxShadow: [
                                           BoxShadow(
                                             blurRadius: 5.0,
@@ -279,9 +276,13 @@ class _HeaderV2WidgetState extends State<HeaderV2Widget> {
                                                             height: 50.0,
                                                             child:
                                                                 CircularProgressIndicator(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
+                                                              valueColor:
+                                                                  AlwaysStoppedAnimation<
+                                                                      Color>(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                              ),
                                                             ),
                                                           ),
                                                         );
@@ -394,9 +395,13 @@ class _HeaderV2WidgetState extends State<HeaderV2Widget> {
                                                           height: 50.0,
                                                           child:
                                                               CircularProgressIndicator(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary,
+                                                            valueColor:
+                                                                AlwaysStoppedAnimation<
+                                                                    Color>(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primary,
+                                                            ),
                                                           ),
                                                         ),
                                                       );
@@ -565,9 +570,13 @@ class _HeaderV2WidgetState extends State<HeaderV2Widget> {
                                                                 height: 50.0,
                                                                 child:
                                                                     CircularProgressIndicator(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
+                                                                  valueColor:
+                                                                      AlwaysStoppedAnimation<
+                                                                          Color>(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primary,
+                                                                  ),
                                                                 ),
                                                               ),
                                                             );
@@ -688,9 +697,13 @@ class _HeaderV2WidgetState extends State<HeaderV2Widget> {
                                                               height: 50.0,
                                                               child:
                                                                   CircularProgressIndicator(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
+                                                                valueColor:
+                                                                    AlwaysStoppedAnimation<
+                                                                        Color>(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                ),
                                                               ),
                                                             ),
                                                           );

@@ -122,11 +122,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => EditProfileWidget(),
         ),
         FFRoute(
-          name: 'AchievementPage',
-          path: '/achievementPage',
-          builder: (context, params) => AchievementPageWidget(),
-        ),
-        FFRoute(
           name: 'qrcodetest',
           path: '/qrcodetest',
           builder: (context, params) => QrcodetestWidget(),
@@ -137,9 +132,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => AddFlyerTwarlyWidget(),
         ),
         FFRoute(
-          name: 'BilderUpload',
-          path: '/bilderUpload',
-          builder: (context, params) => BilderUploadWidget(),
+          name: 'ADDBC',
+          path: '/addbc',
+          builder: (context, params) => AddbcWidget(
+            scanneduid: params.getParam('scanneduid', ParamType.String),
+          ),
+        ),
+        FFRoute(
+          name: 'AchievementPage',
+          path: '/achievementPage',
+          builder: (context, params) => AchievementPageWidget(),
+        ),
+        FFRoute(
+          name: 'chat',
+          path: '/chat',
+          builder: (context, params) => ChatWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -322,7 +329,7 @@ class FFRoute {
               ? Container(
                   color: Color(0xFFD8D8D8),
                   child: Image.asset(
-                    'assets/images/qglh0_6.PNG',
+                    'assets/images/72lk2_6.PNG',
                     fit: BoxFit.fitWidth,
                   ),
                 )

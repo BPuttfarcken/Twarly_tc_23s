@@ -146,7 +146,7 @@ class _Header03TaskSummaryWidgetState extends State<Header03TaskSummaryWidget> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image.asset(
-                    'assets/images/fqvhn_1.png',
+                    'assets/images/vnimc_1.png',
                     width: 220.0,
                     height: 73.0,
                     fit: BoxFit.fitWidth,
