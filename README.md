@@ -116,7 +116,29 @@ Example of custom function code for summing up the individual waste weight saved
 
 You can scan QR-Codes with Twarly to pick up flyers and business cards. For demo purposes this function is currently set up with a simple if-then logic. A connection with a flyer and business card database would be suggested for the development in the future. You can also connect with people through scanning their personal QR-code on the homescreen. The homescreen QR-code contains information about the unique user ID. The QR-code scanner queries the user database. The app generates a business card with some of the account information (for example name, e-mail adress, job, ...) if a user ID is scanned.
 
+# Application framework
 
+The application is created with Flutter which is an open-source mobile application development framework created by Google. It is used to develop applications for Android, iOS, Linux, Mac, Windows, and the web. With Flutter, you can build beautiful, fast, and high-performance apps using a single codebase.
+
+## Install Flutter
+To run this app, you need to have Flutter installed on your computer. Here's how you can do that:
+
+  1. Download the Flutter SDK from the official website.
+  2. Extract the downloaded archive to a directory on your computer.
+  3. Add the flutter command to your PATH by following the instructions on the official website.
+  4. Open a terminal and run the command flutter doctor to check for any dependencies that need to be installed.
+  5. Once all dependencies are installed, you are ready to run the app.
+
+## How to run the App
+
+# Clone this repository
+$ git clone https://github.com/leopries/tech_challenge_app.git
+
+# Go into the repository
+$ cd tech_challenge_app
+
+# Run the app
+$ flutter run
     
 # Twarly
 
