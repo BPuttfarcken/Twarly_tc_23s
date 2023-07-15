@@ -130,16 +130,16 @@ To run this app, you need to have Flutter installed on your computer. Here's how
   5. Once all dependencies are installed, you are ready to run the app.
 
 ## How to run the App
-
+```
 # Clone this repository
-$ git clone https://github.com/leopries/tech_challenge_app.git
+$ git clone https://github.com/BPuttfarcken/Twarly_tc_23s
 
 # Go into the repository
 $ cd tech_challenge_app
 
 # Run the app
 $ flutter run
-    
+ ```   
 # Twarly
 
 A new Flutter project.
