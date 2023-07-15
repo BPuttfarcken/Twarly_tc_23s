@@ -9,6 +9,7 @@ import 'schema/test_liste_record.dart';
 import 'schema/ticket_liste_record.dart';
 import 'schema/waste_counter_record.dart';
 import 'schema/bilder_record.dart';
+import 'schema/ticket_datenbank_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -20,6 +21,7 @@ export 'schema/test_liste_record.dart';
 export 'schema/ticket_liste_record.dart';
 export 'schema/waste_counter_record.dart';
 export 'schema/bilder_record.dart';
+export 'schema/ticket_datenbank_record.dart';
 
 /// Functions to query TestListeRecords (as a Stream and as a Future).
 Future<int> queryTestListeRecordCount({
@@ -56,21 +58,6 @@ Future<List<TestListeRecord>> queryTestListeRecordOnce({
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
-    );
-
-Future<FFFirestorePage<TestListeRecord>> queryTestListeRecordPage({
-  Query Function(Query)? queryBuilder,
-  DocumentSnapshot? nextPageMarker,
-  required int pageSize,
-  required bool isStream,
-}) =>
-    queryCollectionPage(
-      TestListeRecord.collection,
-      TestListeRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      nextPageMarker: nextPageMarker,
-      pageSize: pageSize,
-      isStream: isStream,
     );
 
 /// Functions to query TicketListeRecords (as a Stream and as a Future).
@@ -110,21 +97,6 @@ Future<List<TicketListeRecord>> queryTicketListeRecordOnce({
       singleRecord: singleRecord,
     );
 
-Future<FFFirestorePage<TicketListeRecord>> queryTicketListeRecordPage({
-  Query Function(Query)? queryBuilder,
-  DocumentSnapshot? nextPageMarker,
-  required int pageSize,
-  required bool isStream,
-}) =>
-    queryCollectionPage(
-      TicketListeRecord.collection,
-      TicketListeRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      nextPageMarker: nextPageMarker,
-      pageSize: pageSize,
-      isStream: isStream,
-    );
-
 /// Functions to query WasteCounterRecords (as a Stream and as a Future).
 Future<int> queryWasteCounterRecordCount({
   Query Function(Query)? queryBuilder,
@@ -160,21 +132,6 @@ Future<List<WasteCounterRecord>> queryWasteCounterRecordOnce({
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
-    );
-
-Future<FFFirestorePage<WasteCounterRecord>> queryWasteCounterRecordPage({
-  Query Function(Query)? queryBuilder,
-  DocumentSnapshot? nextPageMarker,
-  required int pageSize,
-  required bool isStream,
-}) =>
-    queryCollectionPage(
-      WasteCounterRecord.collection,
-      WasteCounterRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      nextPageMarker: nextPageMarker,
-      pageSize: pageSize,
-      isStream: isStream,
     );
 
 /// Functions to query BilderRecords (as a Stream and as a Future).
@@ -214,19 +171,41 @@ Future<List<BilderRecord>> queryBilderRecordOnce({
       singleRecord: singleRecord,
     );
 
-Future<FFFirestorePage<BilderRecord>> queryBilderRecordPage({
+/// Functions to query TicketDatenbankRecords (as a Stream and as a Future).
+Future<int> queryTicketDatenbankRecordCount({
   Query Function(Query)? queryBuilder,
-  DocumentSnapshot? nextPageMarker,
-  required int pageSize,
-  required bool isStream,
+  int limit = -1,
 }) =>
-    queryCollectionPage(
-      BilderRecord.collection,
-      BilderRecord.fromSnapshot,
+    queryCollectionCount(
+      TicketDatenbankRecord.collection,
       queryBuilder: queryBuilder,
-      nextPageMarker: nextPageMarker,
-      pageSize: pageSize,
-      isStream: isStream,
+      limit: limit,
+    );
+
+Stream<List<TicketDatenbankRecord>> queryTicketDatenbankRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      TicketDatenbankRecord.collection,
+      TicketDatenbankRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<TicketDatenbankRecord>> queryTicketDatenbankRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      TicketDatenbankRecord.collection,
+      TicketDatenbankRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
     );
 
 Future<int> queryCollectionCount(
@@ -376,4 +355,9 @@ Future maybeCreateUser(User user) async {
   await userRecord.set(userData);
   currentUserDocument =
       TicketListeRecord.getDocumentFromData(userData, userRecord);
+}
+
+Future updateUserDocument({String? email}) async {
+  await currentUserDocument?.reference
+      .update(createTicketListeRecordData(email: email));
 }

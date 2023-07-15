@@ -117,10 +117,9 @@ class _UserProfileWidgetState extends State<UserProfileWidget> {
                               builder: (context) => ClipRRect(
                                 borderRadius: BorderRadius.circular(50.0),
                                 child: CachedNetworkImage(
-                                  imageUrl: valueOrDefault<String>(
-                                    currentUserPhoto,
-                                    'https://images.unsplash.com/photo-1531123414780-f74242c2b052?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDV8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60',
-                                  ),
+                                  fadeInDuration: Duration(milliseconds: 500),
+                                  fadeOutDuration: Duration(milliseconds: 500),
+                                  imageUrl: currentUserPhoto,
                                   width: 60.0,
                                   height: 60.0,
                                   fit: BoxFit.cover,

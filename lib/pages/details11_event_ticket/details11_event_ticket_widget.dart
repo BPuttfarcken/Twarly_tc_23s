@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -172,211 +173,174 @@ class _Details11EventTicketWidgetState extends State<Details11EventTicketWidget>
         ),
         body: SafeArea(
           top: true,
-          child: Stack(
-            children: [
-              Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
-                child: Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 100.0),
-                  child: Material(
-                    color: Colors.transparent,
-                    elevation: 0.0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                    child: Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Color(0xFF99C2AE),
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 12.0,
-                            color: Color(0xBF000000),
-                            offset: Offset(0.0, 5.0),
-                          )
-                        ],
-                        borderRadius: BorderRadius.circular(15.0),
+          child: AuthUserStreamWidget(
+            builder: (context) => StreamBuilder<List<TicketDatenbankRecord>>(
+              stream: queryTicketDatenbankRecord(
+                queryBuilder: (ticketDatenbankRecord) =>
+                    ticketDatenbankRecord.where('TicketCode',
+                        isEqualTo:
+                            valueOrDefault(currentUserDocument?.ticketNO, '')),
+                singleRecord: true,
+              ),
+              builder: (context, snapshot) {
+                // Customize what your widget looks like when it's loading.
+                if (!snapshot.hasData) {
+                  return Center(
+                    child: SizedBox(
+                      width: 50.0,
+                      height: 50.0,
+                      child: CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          FlutterFlowTheme.of(context).primary,
+                        ),
                       ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 16.0),
-                            child: Container(
-                              width: 100.0,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(0.0),
-                                  bottomRight: Radius.circular(0.0),
-                                  topLeft: Radius.circular(16.0),
-                                  topRight: Radius.circular(16.0),
-                                ),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 20.0, 0.0, 16.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 0.0, 16.0, 4.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          AutoSizeText(
-                                            'at',
-                                            textAlign: TextAlign.start,
-                                            style: FlutterFlowTheme.of(context)
-                                                .titleSmall
-                                                .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
-                                                  color: Colors.black,
-                                                  fontSize: 16.0,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                          ),
-                                          Expanded(
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(4.0, 0.0, 0.0, 0.0),
-                                              child: AutoSizeText(
-                                                'WasteLessFest',
-                                                textAlign: TextAlign.start,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          color: Colors.black,
-                                                          fontSize: 25.0,
-                                                          fontWeight:
-                                                              FontWeight.w800,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(50.0),
-                                            child: CachedNetworkImage(
-                                              imageUrl:
-                                                  'https://firebasestorage.googleapis.com/v0/b/wastelessfest.appspot.com/o/users%2FYn6DyPSfcCerwmKzdWg48Psht122%2Fuploads%2F1688391569944000.PNG?alt=media&token=dfdbac46-8bf0-42a9-bcb3-6b0a9ec0a4fa',
-                                              width: 40.0,
-                                              height: 40.0,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 0.0, 20.0, 0.0),
-                                      child: AutoSizeText(
-                                        '@ MUNICH - Urban Collab Center',
-                                        textAlign: TextAlign.start,
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Plus Jakarta Sans',
-                                              color: Colors.black,
-                                              fontSize: 16.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 32.0, 0.0, 0.0),
-                                      child: AutoSizeText(
-                                        '10 - 12 November',
-                                        textAlign: TextAlign.start,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Plus Jakarta Sans',
-                                              color: Colors.black,
-                                              fontSize: 25.0,
-                                              fontWeight: FontWeight.w800,
-                                            ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 4.0, 20.0, 0.0),
-                                      child: AutoSizeText(
-                                        '2023',
-                                        textAlign: TextAlign.start,
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Plus Jakarta Sans',
-                                              color: Colors.black,
-                                              fontSize: 16.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
-                                    ),
-                                  ],
-                                ).animateOnPageLoad(animationsMap[
-                                    'columnOnPageLoadAnimation1']!),
-                              ),
-                            ),
+                    ),
+                  );
+                }
+                List<TicketDatenbankRecord> stackTicketDatenbankRecordList =
+                    snapshot.data!;
+                // Return an empty Container when the item does not exist.
+                if (snapshot.data!.isEmpty) {
+                  return Container();
+                }
+                final stackTicketDatenbankRecord =
+                    stackTicketDatenbankRecordList.isNotEmpty
+                        ? stackTicketDatenbankRecordList.first
+                        : null;
+                return Stack(
+                  children: [
+                    Align(
+                      alignment: AlignmentDirectional(0.0, 0.0),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 16.0, 16.0, 100.0),
+                        child: Material(
+                          color: Colors.transparent,
+                          elevation: 0.0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
                           ),
-                          Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 12.0, 20.0, 0.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    AuthUserStreamWidget(
-                                      builder: (context) => Text(
-                                        valueOrDefault(
-                                            currentUserDocument?.userName, ''),
-                                        style: FlutterFlowTheme.of(context)
-                                            .headlineMedium
-                                            .override(
-                                              fontFamily: 'Plus Jakarta Sans',
-                                              color: Color(0xFF101213),
-                                              fontSize: 24.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
+                          child: Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: Color(0xFF99C2AE),
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 12.0,
+                                  color: Color(0xBF000000),
+                                  offset: Offset(0.0, 5.0),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 16.0),
+                                  child: Container(
+                                    width: 100.0,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(0.0),
+                                        bottomRight: Radius.circular(0.0),
+                                        topLeft: Radius.circular(16.0),
+                                        topRight: Radius.circular(16.0),
                                       ),
                                     ),
-                                    Padding(
+                                    child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 12.0, 0.0, 0.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
+                                          0.0, 20.0, 0.0, 16.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 12.0, 0.0),
-                                            child: Text(
-                                              'Wasteless GmbH',
+                                                    20.0, 0.0, 16.0, 4.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                AutoSizeText(
+                                                  'at',
+                                                  textAlign: TextAlign.start,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        color: Colors.black,
+                                                        fontSize: 16.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                                Expanded(
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(4.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: AutoSizeText(
+                                                      stackTicketDatenbankRecord!
+                                                          .eventName,
+                                                      textAlign:
+                                                          TextAlign.start,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Plus Jakarta Sans',
+                                                            color: Colors.black,
+                                                            fontSize: 25.0,
+                                                            fontWeight:
+                                                                FontWeight.w800,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          50.0),
+                                                  child: CachedNetworkImage(
+                                                    fadeInDuration: Duration(
+                                                        milliseconds: 500),
+                                                    fadeOutDuration: Duration(
+                                                        milliseconds: 500),
+                                                    imageUrl:
+                                                        'https://firebasestorage.googleapis.com/v0/b/wastelessfest.appspot.com/o/users%2FYn6DyPSfcCerwmKzdWg48Psht122%2Fuploads%2F1688391569944000.PNG?alt=media&token=dfdbac46-8bf0-42a9-bcb3-6b0a9ec0a4fa',
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    20.0, 0.0, 20.0, 0.0),
+                                            child: AutoSizeText(
+                                              stackTicketDatenbankRecord!
+                                                  .eventPlace,
+                                              textAlign: TextAlign.start,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .labelLarge
+                                                      .titleSmall
                                                       .override(
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
@@ -387,166 +351,297 @@ class _Details11EventTicketWidgetState extends State<Details11EventTicketWidget>
                                                       ),
                                             ),
                                           ),
-                                          Text(
-                                            '202 F',
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelLarge
-                                                .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
-                                                  color: Colors.black,
-                                                  fontSize: 16.0,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 12.0, 0.0, 0.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 12.0, 0.0),
-                                            child: Text(
-                                              'Seat',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyLarge
-                                                  .override(
-                                                    fontFamily:
-                                                        'Plus Jakarta Sans',
-                                                    color: Color(0xFF101213),
-                                                    fontSize: 16.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
+                                                    20.0, 32.0, 0.0, 0.0),
+                                            child: AutoSizeText(
+                                              stackTicketDatenbankRecord!
+                                                  .ticketDate,
+                                              textAlign: TextAlign.start,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        color: Colors.black,
+                                                        fontSize: 25.0,
+                                                        fontWeight:
+                                                            FontWeight.w800,
+                                                      ),
                                             ),
                                           ),
-                                          Text(
-                                            '19F',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
-                                                  color: Color(0xFF101213),
-                                                  fontSize: 16.0,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    20.0, 4.0, 20.0, 0.0),
+                                            child: AutoSizeText(
+                                              stackTicketDatenbankRecord!
+                                                  .ticketYear,
+                                              textAlign: TextAlign.start,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        color: Colors.black,
+                                                        fontSize: 16.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                            ),
                                           ),
                                         ],
-                                      ),
+                                      ).animateOnPageLoad(animationsMap[
+                                          'columnOnPageLoadAnimation1']!),
                                     ),
+                                  ),
+                                ),
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 12.0, 0.0, 0.0),
-                                      child: Row(
+                                          20.0, 12.0, 20.0, 0.0),
+                                      child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 12.0, 0.0),
-                                            child: Text(
-                                              'Puchased',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleLarge
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: Color(0xFF101213),
-                                                    fontSize: 18.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                            ),
-                                          ),
                                           Text(
-                                            '\$10',
+                                            stackTicketDatenbankRecord!
+                                                .ticketName,
                                             style: FlutterFlowTheme.of(context)
-                                                .titleLarge
+                                                .headlineMedium
                                                 .override(
-                                                  fontFamily: 'Outfit',
+                                                  fontFamily:
+                                                      'Plus Jakarta Sans',
                                                   color: Color(0xFF101213),
-                                                  fontSize: 18.0,
+                                                  fontSize: 24.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                           ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 12.0, 0.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 12.0, 0.0),
+                                                  child: Text(
+                                                    stackTicketDatenbankRecord!
+                                                        .ticketCompany,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color: Colors.black,
+                                                          fontSize: 16.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 12.0, 0.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 12.0, 0.0),
+                                                  child: Text(
+                                                    'Seat',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color:
+                                                              Color(0xFF101213),
+                                                          fontSize: 16.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                  ),
+                                                ),
+                                                Text(
+                                                  stackTicketDatenbankRecord!
+                                                      .ticketSeatNo,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        color:
+                                                            Color(0xFF101213),
+                                                        fontSize: 16.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 12.0, 0.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 12.0, 0.0),
+                                                  child: Text(
+                                                    'Puchased',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .titleLarge
+                                                        .override(
+                                                          fontFamily: 'Outfit',
+                                                          color:
+                                                              Color(0xFF101213),
+                                                          fontSize: 18.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                  ),
+                                                ),
+                                                Text(
+                                                  stackTicketDatenbankRecord!
+                                                      .ticketPrice,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .titleLarge
+                                                      .override(
+                                                        fontFamily: 'Outfit',
+                                                        color:
+                                                            Color(0xFF101213),
+                                                        fontSize: 18.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 8.0, 0.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 12.0, 0.0),
+                                                  child: Text(
+                                                    'Ticket No.',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color: Colors.black,
+                                                          fontSize: 14.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                  ),
+                                                ),
+                                                Text(
+                                                  stackTicketDatenbankRecord!
+                                                      .ticketCode,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        color: Colors.black,
+                                                      ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
                                         ],
-                                      ),
+                                      ).animateOnPageLoad(animationsMap[
+                                          'columnOnPageLoadAnimation2']!),
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 8.0, 12.0, 0.0),
-                                      child: Text(
-                                        'Ticket No. 12345',
-                                        style: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily: 'Plus Jakarta Sans',
-                                              color: Colors.black,
-                                              fontSize: 14.0,
-                                              fontWeight: FontWeight.w500,
+                                          0.0, 24.0, 0.0, 12.0),
+                                      child: Container(
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.35,
+                                        height: 140.0,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 0.0, 16.0, 0.0),
+                                          child: BarcodeWidget(
+                                            data: stackTicketDatenbankRecord!
+                                                .ticketCode,
+                                            barcode: Barcode.qrCode(),
+                                            width: 100.0,
+                                            height: 100.0,
+                                            color: Colors.black,
+                                            backgroundColor: Colors.transparent,
+                                            errorBuilder: (_context, _error) =>
+                                                SizedBox(
+                                              width: 100.0,
+                                              height: 100.0,
                                             ),
-                                      ),
+                                            drawText: false,
+                                          ),
+                                        ),
+                                      ).animateOnPageLoad(animationsMap[
+                                          'containerOnPageLoadAnimation2']!),
                                     ),
                                   ],
-                                ).animateOnPageLoad(animationsMap[
-                                    'columnOnPageLoadAnimation2']!),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 24.0, 0.0, 12.0),
-                                child: Container(
-                                  width:
-                                      MediaQuery.sizeOf(context).width * 0.35,
-                                  height: 140.0,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    child: AuthUserStreamWidget(
-                                      builder: (context) => BarcodeWidget(
-                                        data: valueOrDefault<String>(
-                                          valueOrDefault(
-                                              currentUserDocument?.ticketNO,
-                                              ''),
-                                          '12345',
-                                        ),
-                                        barcode: Barcode.qrCode(),
-                                        width: 100.0,
-                                        height: 100.0,
-                                        color: Colors.black,
-                                        backgroundColor: Colors.transparent,
-                                        errorBuilder: (_context, _error) =>
-                                            SizedBox(
-                                          width: 100.0,
-                                          height: 100.0,
-                                        ),
-                                        drawText: false,
-                                      ),
-                                    ),
-                                  ),
-                                ).animateOnPageLoad(animationsMap[
-                                    'containerOnPageLoadAnimation2']!),
-                              ),
-                            ],
+                                ),
+                              ],
+                            ),
                           ),
-                        ],
+                        ).animateOnPageLoad(
+                            animationsMap['containerOnPageLoadAnimation1']!),
                       ),
                     ),
-                  ).animateOnPageLoad(
-                      animationsMap['containerOnPageLoadAnimation1']!),
-                ),
-              ),
-            ],
+                  ],
+                );
+              },
+            ),
           ),
         ),
       ),

@@ -100,8 +100,8 @@ class _TaskBarWidgetState extends State<TaskBarWidget> {
             color: Colors.black,
             size: 35.0,
           ),
-          onPressed: () {
-            print('Chat pressed ...');
+          onPressed: () async {
+            context.pushNamed('chat');
           },
         ),
       ],

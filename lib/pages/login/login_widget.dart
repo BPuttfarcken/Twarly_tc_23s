@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -890,8 +891,31 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                   userName: _model
                                                                       .usernameController
                                                                       .text,
-                                                                  indivwastecounter:
-                                                                      0.0,
+                                                                  ticketNO:
+                                                                      '000',
+                                                                  photoUrl:
+                                                                      'https://images.unsplash.com/photo-1611590027211-b954fd027b51?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1338&q=80',
+                                                                ));
+
+                                                            await WasteCounterRecord
+                                                                .collection
+                                                                .doc()
+                                                                .set(
+                                                                    createWasteCounterRecordData(
+                                                                  wasteWeight:
+                                                                      0.015,
+                                                                  wasteSaver: valueOrDefault(
+                                                                      currentUserDocument
+                                                                          ?.userName,
+                                                                      ''),
+                                                                  userID:
+                                                                      currentUserUid,
+                                                                  dateTime:
+                                                                      getCurrentTimestamp,
+                                                                  savedCO2:
+                                                                      0.012,
+                                                                  savedItem:
+                                                                      'Map',
                                                                 ));
 
                                                             context.goNamedAuth(

@@ -66,16 +66,6 @@ class TicketListeRecord extends FirestoreRecord {
   String get ticketNO => _ticketNO ?? '';
   bool hasTicketNO() => _ticketNO != null;
 
-  // "FlyerCode" field.
-  String? _flyerCode;
-  String get flyerCode => _flyerCode ?? '';
-  bool hasFlyerCode() => _flyerCode != null;
-
-  // "indivwastecounter" field.
-  double? _indivwastecounter;
-  double get indivwastecounter => _indivwastecounter ?? 0.0;
-  bool hasIndivwastecounter() => _indivwastecounter != null;
-
   // "City" field.
   String? _city;
   String get city => _city ?? '';
@@ -97,8 +87,6 @@ class TicketListeRecord extends FirestoreRecord {
     _bio = snapshotData['bio'] as String?;
     _userName = snapshotData['user_name'] as String?;
     _ticketNO = snapshotData['TicketNO'] as String?;
-    _flyerCode = snapshotData['FlyerCode'] as String?;
-    _indivwastecounter = castToType<double>(snapshotData['indivwastecounter']);
     _city = snapshotData['City'] as String?;
     _job = snapshotData['Job'] as String?;
   }
@@ -148,8 +136,6 @@ Map<String, dynamic> createTicketListeRecordData({
   String? bio,
   String? userName,
   String? ticketNO,
-  String? flyerCode,
-  double? indivwastecounter,
   String? city,
   String? job,
 }) {
@@ -165,8 +151,6 @@ Map<String, dynamic> createTicketListeRecordData({
       'bio': bio,
       'user_name': userName,
       'TicketNO': ticketNO,
-      'FlyerCode': flyerCode,
-      'indivwastecounter': indivwastecounter,
       'City': city,
       'Job': job,
     }.withoutNulls,
@@ -190,8 +174,6 @@ class TicketListeRecordDocumentEquality implements Equality<TicketListeRecord> {
         e1?.bio == e2?.bio &&
         e1?.userName == e2?.userName &&
         e1?.ticketNO == e2?.ticketNO &&
-        e1?.flyerCode == e2?.flyerCode &&
-        e1?.indivwastecounter == e2?.indivwastecounter &&
         e1?.city == e2?.city &&
         e1?.job == e2?.job;
   }
@@ -208,8 +190,6 @@ class TicketListeRecordDocumentEquality implements Equality<TicketListeRecord> {
         e?.bio,
         e?.userName,
         e?.ticketNO,
-        e?.flyerCode,
-        e?.indivwastecounter,
         e?.city,
         e?.job
       ]);
