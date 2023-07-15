@@ -135,7 +135,7 @@ To run this app, you need to have Flutter installed on your computer. Here's how
 $ git clone https://github.com/BPuttfarcken/Twarly_tc_23s
 
 # Go into the repository
-$ cd tech_challenge_app
+$ cd Twarly_tc_23s
 
 # Run the app
 $ flutter run
