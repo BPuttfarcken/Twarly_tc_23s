@@ -2,6 +2,11 @@
 
 Presenting Twarly: This App helps to reduce waste at events and fairs by providing a digital alternative to physical tickets, flyers, business cards and maps. You have everything you need at one place with your Twarly app.
 
+## Software used
+
+- Cloud Firestore: NoSQL document database
+- Flutterflow 
+
 ## How to use the app
 
 1. Create a log-in account
